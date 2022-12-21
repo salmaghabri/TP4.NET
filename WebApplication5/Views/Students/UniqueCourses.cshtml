@@ -1,0 +1,37 @@
+﻿@model IEnumerable<string>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UniqueCourses</title>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>course</th>
+            <th>students enrolled</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @item
+                </td>
+                <td>
+                    @Html.ActionLink("students enrolled","Students",item)
+                </td>
+              
+            </tr>
+        }
+
+    </table>
+</body>
+</html>
